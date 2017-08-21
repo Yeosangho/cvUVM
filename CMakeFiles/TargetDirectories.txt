@@ -1,0 +1,3 @@
+/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/edit_cache.dir
+/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir
