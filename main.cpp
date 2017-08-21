@@ -2,9 +2,7 @@
 #include <opencv2/core/mat.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
-#include "opencv2/cudafilters.hpp"
-#include "opencv2/cudaimgproc.hpp"
-#include "opencv2/core/cuda.hpp"
+#include "opencv2/gpu/gpu.hpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -24,8 +22,8 @@ int main(int argc, char** argv){
 	hmat = Mat(cvSize(cols, rows), CV_32F,  h_img);
 	Mat result;
 	hmat = cv::imread("../720p.jpg");
-	cout << hmat << endl;
-	cuda::GpuMat dmat(cvSize(rows, cols), CV_32F, h_img);
+	//cout << hmat << endl;
+	gpu::GpuMat dmat(cvSize(rows, cols), CV_32F, h_img);
 	cuDeviceSynchronize();
 	double timeSec = 0;
 	int64 startUVM = getTickCount();
@@ -37,7 +35,7 @@ int main(int argc, char** argv){
 	}
 	dmat.download(hmat);
 	cuDeviceSynchronize();
-	cv::imshow("test", hmat);
+	//cv::imshow("test", hmat);
 	cout << timeSec << endl;
 	
 	float* h_img2 = (float*)malloc(sizeof(float)*rows*cols);
@@ -47,7 +45,7 @@ int main(int argc, char** argv){
 	
 	Mat hmat2(cvSize(rows, cols), CV_32F, h_img2);
 	
-	cuda::GpuMat dmat2(cvSize(rows, cols), CV_32F, d_img2);
+	gpu::GpuMat dmat2(cvSize(rows, cols), CV_32F, d_img2);
 	timeSec = 0;
 	startUVM = getTickCount();
 	for(int i=0; i<100; i++)
@@ -57,9 +55,27 @@ int main(int argc, char** argv){
 		timeSec += (getTickCount() - startUVM) / getTickFrequency();
 	}
 	cout << timeSec << endl;
+	//https://stackoverflow.com/questions/14361322/accessing-image-pixels-as-float-array
+	VideoCapture cap("../NORWAY720P.mp4");
+    if(!cap.isOpened())  // check if we succeeded
+        return -1;
+	float* frameMem;
+	cuMallocManaged(&frameMem, rows, cols);
+	Mat frame2;
+	Mat frame(cvSize(cols, rows), CV_32F,  frameMem);
+	Mat result2;
+	gpu::GpuMat dframe(cvSize(cols, rows), CV_32F, frameMem);
+	for(;;){
+		cap >> frame2;
+		frameMem = (float *)frame2.data;
+		cout << *frameMem << endl;
+		dframe.download(result2);
+		cuDeviceSynchronize(); 
+		cv::imshow("test", result2);
+		 
+		waitKey(1); 
+	}
 
-
-	waitKey(0);
 	//cout << dmat << endl;
 	return 0;
 }

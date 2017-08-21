@@ -56,18 +56,18 @@ endif()
 
 # Set these up as variables to make reading the generated file easier
 set(CMAKE_COMMAND "/usr/bin/cmake") # path
-set(source_file "/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/memoryAccessor.cu") # path
-set(NVCC_generated_dependency_file "/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir//multipleCUDAStreamCV_generated_memoryAccessor.cu.o.NVCC-depend") # path
-set(cmake_dependency_file "/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir//multipleCUDAStreamCV_generated_memoryAccessor.cu.o.depend") # path
+set(source_file "/home/ubuntu/dev/cvUVM/memoryAccessor.cu") # path
+set(NVCC_generated_dependency_file "/home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir//multipleCUDAStreamCV_generated_memoryAccessor.cu.o.NVCC-depend") # path
+set(cmake_dependency_file "/home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir//multipleCUDAStreamCV_generated_memoryAccessor.cu.o.depend") # path
 set(CUDA_make2cmake "/usr/share/cmake-3.5/Modules/FindCUDA/make2cmake.cmake") # path
 set(CUDA_parse_cubin "/usr/share/cmake-3.5/Modules/FindCUDA/parse_cubin.cmake") # path
 set(build_cubin OFF) # bool
 set(CUDA_HOST_COMPILER "/usr/bin/cc") # path
 # We won't actually use these variables for now, but we need to set this, in
 # order to force this file to be run again if it changes.
-set(generated_file_path "/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir//.") # path
-set(generated_file_internal "/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir//./multipleCUDAStreamCV_generated_memoryAccessor.cu.o") # path
-set(generated_cubin_file_internal "/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir//./multipleCUDAStreamCV_generated_memoryAccessor.cu.o.cubin.txt") # path
+set(generated_file_path "/home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir//.") # path
+set(generated_file_internal "/home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir//./multipleCUDAStreamCV_generated_memoryAccessor.cu.o") # path
+set(generated_cubin_file_internal "/home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir//./multipleCUDAStreamCV_generated_memoryAccessor.cu.o.cubin.txt") # path
 
 set(CUDA_NVCC_EXECUTABLE "/usr/local/cuda-8.0/bin/nvcc") # path
 set(CUDA_NVCC_FLAGS --default-stream;per-thread;--compiler-options;-fno-strict-aliasing;-lineinfo;-use_fast_math;-Xptxas;-dlcm=cg;-O3;-gencode;arch=compute_53,code=sm_53 ;; ) # list
@@ -77,7 +77,7 @@ set(CUDA_NVCC_FLAGS_MINSIZEREL  ; )
 set(CUDA_NVCC_FLAGS_RELEASE  ; )
 set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ; )
 set(nvcc_flags -m64;--std;c++11) # list
-set(CUDA_NVCC_INCLUDE_ARGS "-I/usr/local/cuda-8.0/include;-I/usr/local/include;-I/usr/local/include/opencv;-I/usr/local/cuda/include;-I/usr/local/cuda-8.0/include") # list (needs to be in quotes to handle spaces properly).
+set(CUDA_NVCC_INCLUDE_ARGS "-I/usr/local/cuda-8.0/include;-I/usr/include/opencv;-I/usr/include;-I/usr/local/cuda/include;-I/usr/local/cuda-8.0/include") # list (needs to be in quotes to handle spaces properly).
 set(format_flag "-c") # string
 set(cuda_language_flag ) # list
 
