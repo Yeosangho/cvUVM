@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal
+CMAKE_SOURCE_DIR = /home/ubuntu/dev/cvUVM
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal
+CMAKE_BINARY_DIR = /home/ubuntu/dev/cvUVM
 
 # Include any dependencies generated for this target.
 include CMakeFiles/multipleCUDAStreamCV.dir/depend.make
@@ -273,22 +273,22 @@ CMakeFiles/multipleCUDAStreamCV.dir/multipleCUDAStreamCV_generated_memoryAccesso
 CMakeFiles/multipleCUDAStreamCV.dir/multipleCUDAStreamCV_generated_memoryAccessor.cu.o: /usr/local/cuda-8.0/include/vector_types.h
 CMakeFiles/multipleCUDAStreamCV.dir/multipleCUDAStreamCV_generated_memoryAccessor.cu.o: CMakeFiles/multipleCUDAStreamCV.dir/multipleCUDAStreamCV_generated_memoryAccessor.cu.o.cmake
 CMakeFiles/multipleCUDAStreamCV.dir/multipleCUDAStreamCV_generated_memoryAccessor.cu.o: memoryAccessor.cu
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building NVCC (Device) object CMakeFiles/multipleCUDAStreamCV.dir/multipleCUDAStreamCV_generated_memoryAccessor.cu.o"
-	cd /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir && /usr/bin/cmake -E make_directory /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir//.
-	cd /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir && /usr/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir//./multipleCUDAStreamCV_generated_memoryAccessor.cu.o -D generated_cubin_file:STRING=/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir//./multipleCUDAStreamCV_generated_memoryAccessor.cu.o.cubin.txt -P /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir//multipleCUDAStreamCV_generated_memoryAccessor.cu.o.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/dev/cvUVM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building NVCC (Device) object CMakeFiles/multipleCUDAStreamCV.dir/multipleCUDAStreamCV_generated_memoryAccessor.cu.o"
+	cd /home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir && /usr/bin/cmake -E make_directory /home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir//.
+	cd /home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir && /usr/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir//./multipleCUDAStreamCV_generated_memoryAccessor.cu.o -D generated_cubin_file:STRING=/home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir//./multipleCUDAStreamCV_generated_memoryAccessor.cu.o.cubin.txt -P /home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir//multipleCUDAStreamCV_generated_memoryAccessor.cu.o.cmake
 
 CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.o: CMakeFiles/multipleCUDAStreamCV.dir/flags.make
 CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.o -c /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/dev/cvUVM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.o -c /home/ubuntu/dev/cvUVM/main.cpp
 
 CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/main.cpp > CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/dev/cvUVM/main.cpp > CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.i
 
 CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/main.cpp -o CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/dev/cvUVM/main.cpp -o CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.s
 
 CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.o.requires:
 
@@ -307,44 +307,31 @@ multipleCUDAStreamCV_OBJECTS = \
 
 # External object files for target multipleCUDAStreamCV
 multipleCUDAStreamCV_EXTERNAL_OBJECTS = \
-"/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir/multipleCUDAStreamCV_generated_memoryAccessor.cu.o"
+"/home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir/multipleCUDAStreamCV_generated_memoryAccessor.cu.o"
 
 multipleCUDAStreamCV: CMakeFiles/multipleCUDAStreamCV.dir/main.cpp.o
 multipleCUDAStreamCV: CMakeFiles/multipleCUDAStreamCV.dir/multipleCUDAStreamCV_generated_memoryAccessor.cu.o
 multipleCUDAStreamCV: CMakeFiles/multipleCUDAStreamCV.dir/build.make
 multipleCUDAStreamCV: /usr/local/cuda-8.0/lib64/libcudart.so
-multipleCUDAStreamCV: /usr/local/lib/libopencv_cudabgsegm.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_cudaobjdetect.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_cudastereo.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_dnn.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_ml.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_shape.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_stitching.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_superres.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_videostab.so.3.3.0
-multipleCUDAStreamCV: /usr/lib/aarch64-linux-gnu/libtbb.so
-multipleCUDAStreamCV: /usr/local/lib/libopencv_cudafeatures2d.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_cudacodec.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_cudaoptflow.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_cudalegacy.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_calib3d.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_cudawarping.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_features2d.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_flann.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_highgui.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_objdetect.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_photo.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_cudaimgproc.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_cudafilters.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_cudaarithm.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_video.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_videoio.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_imgcodecs.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_imgproc.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_core.so.3.3.0
-multipleCUDAStreamCV: /usr/local/lib/libopencv_cudev.so.3.3.0
+multipleCUDAStreamCV: /usr/lib/libopencv_gpu.so.2.4.13
+multipleCUDAStreamCV: /usr/local/cuda-8.0/lib64/libcufft.so
+multipleCUDAStreamCV: /usr/lib/libopencv_legacy.so.2.4.13
+multipleCUDAStreamCV: /usr/lib/libopencv_video.so.2.4.13
+multipleCUDAStreamCV: /usr/lib/libopencv_calib3d.so.2.4.13
+multipleCUDAStreamCV: /usr/lib/libopencv_features2d.so.2.4.13
+multipleCUDAStreamCV: /usr/lib/libopencv_flann.so.2.4.13
+multipleCUDAStreamCV: /usr/lib/libopencv_ml.so.2.4.13
+multipleCUDAStreamCV: /usr/lib/libopencv_objdetect.so.2.4.13
+multipleCUDAStreamCV: /usr/lib/libopencv_highgui.so.2.4.13
+multipleCUDAStreamCV: /usr/lib/libopencv_photo.so.2.4.13
+multipleCUDAStreamCV: /usr/lib/libopencv_imgproc.so.2.4.13
+multipleCUDAStreamCV: /usr/lib/libopencv_core.so.2.4.13
+multipleCUDAStreamCV: /usr/local/cuda-8.0/lib64/libcudart.so
+multipleCUDAStreamCV: /usr/local/cuda-8.0/lib64/libnppc.so
+multipleCUDAStreamCV: /usr/local/cuda-8.0/lib64/libnppi.so
+multipleCUDAStreamCV: /usr/local/cuda-8.0/lib64/libnpps.so
 multipleCUDAStreamCV: CMakeFiles/multipleCUDAStreamCV.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable multipleCUDAStreamCV"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/dev/cvUVM/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable multipleCUDAStreamCV"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/multipleCUDAStreamCV.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -361,6 +348,6 @@ CMakeFiles/multipleCUDAStreamCV.dir/clean:
 .PHONY : CMakeFiles/multipleCUDAStreamCV.dir/clean
 
 CMakeFiles/multipleCUDAStreamCV.dir/depend: CMakeFiles/multipleCUDAStreamCV.dir/multipleCUDAStreamCV_generated_memoryAccessor.cu.o
-	cd /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/multipleCUDAStreamCV.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/dev/cvUVM && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/dev/cvUVM /home/ubuntu/dev/cvUVM /home/ubuntu/dev/cvUVM /home/ubuntu/dev/cvUVM /home/ubuntu/dev/cvUVM/CMakeFiles/multipleCUDAStreamCV.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/multipleCUDAStreamCV.dir/depend
 

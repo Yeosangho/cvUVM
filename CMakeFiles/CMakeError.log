@@ -1,25 +1,25 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/dev/cvUVM/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7e320/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7e320.dir/build.make CMakeFiles/cmTC_7e320.dir/build
-make[1]: Entering directory '/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7e320.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_7e320.dir/CheckSymbolExists.c.o   -c /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_7e320
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7e320.dir/link.txt --verbose=1
-/usr/bin/cc  -fPIC     CMakeFiles/cmTC_7e320.dir/CheckSymbolExists.c.o  -o cmTC_7e320 -rdynamic 
-CMakeFiles/cmTC_7e320.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_92448/fast"
+/usr/bin/make -f CMakeFiles/cmTC_92448.dir/build.make CMakeFiles/cmTC_92448.dir/build
+make[1]: Entering directory '/home/ubuntu/dev/cvUVM/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_92448.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -fPIC    -o CMakeFiles/cmTC_92448.dir/CheckSymbolExists.c.o   -c /home/ubuntu/dev/cvUVM/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_92448
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92448.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC     CMakeFiles/cmTC_92448.dir/CheckSymbolExists.c.o  -o cmTC_92448 -rdynamic 
+CMakeFiles/cmTC_92448.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x14): undefined reference to `pthread_create'
 CheckSymbolExists.c:(.text+0x18): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_7e320.dir/build.make:97: recipe for target 'cmTC_7e320' failed
-make[1]: *** [cmTC_7e320] Error 1
-make[1]: Leaving directory '/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_7e320/fast' failed
-make: *** [cmTC_7e320/fast] Error 2
+CMakeFiles/cmTC_92448.dir/build.make:97: recipe for target 'cmTC_92448' failed
+make[1]: *** [cmTC_92448] Error 1
+make[1]: Leaving directory '/home/ubuntu/dev/cvUVM/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_92448/fast' failed
+make: *** [cmTC_92448/fast] Error 2
 
-File /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/ubuntu/dev/cvUVM/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -35,22 +35,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/dev/cvUVM/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ca2b1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ca2b1.dir/build.make CMakeFiles/cmTC_ca2b1.dir/build
-make[1]: Entering directory '/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ca2b1.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_ca2b1.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_ca2b1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca2b1.dir/link.txt --verbose=1
-/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_ca2b1.dir/CheckFunctionExists.c.o  -o cmTC_ca2b1 -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_db8d3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_db8d3.dir/build.make CMakeFiles/cmTC_db8d3.dir/build
+make[1]: Entering directory '/home/ubuntu/dev/cvUVM/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_db8d3.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_db8d3.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_db8d3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db8d3.dir/link.txt --verbose=1
+/usr/bin/cc  -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_db8d3.dir/CheckFunctionExists.c.o  -o cmTC_db8d3 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_ca2b1.dir/build.make:97: recipe for target 'cmTC_ca2b1' failed
-make[1]: *** [cmTC_ca2b1] Error 1
-make[1]: Leaving directory '/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_ca2b1/fast' failed
-make: *** [cmTC_ca2b1/fast] Error 2
+CMakeFiles/cmTC_db8d3.dir/build.make:97: recipe for target 'cmTC_db8d3' failed
+make[1]: *** [cmTC_db8d3] Error 1
+make[1]: Leaving directory '/home/ubuntu/dev/cvUVM/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_db8d3/fast' failed
+make: *** [cmTC_db8d3/fast] Error 2
 
 

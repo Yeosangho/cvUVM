@@ -2,9 +2,7 @@
 #include <opencv2/core/mat.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
-#include "opencv2/cudafilters.hpp"
-#include "opencv2/cudaimgproc.hpp"
-#include "opencv2/core/cuda.hpp"
+#include "opencv2/gpu/gpu.hpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -16,25 +14,35 @@ int main(int argc, char** argv){
 	
 
 	cuSetDeviceFlags();
-	float *h_img;
-	int rows = 1280;
-	int cols = 720;
-	Mat mat = cv::imread("../720p.jpg", CV_32FC1);
+	unsigned char *h_img;
+	unsigned char *h_img2;
+	unsigned char *h_img3;
+
+	int rows = 720;
+	int cols = 1280;
+	Mat mat = cv::imread("../720p.jpg", CV_8UC1);
 
 	
 	cuMallocManaged((void **)&h_img, rows, cols);
-	mat.convertTo(mat,CV_32FC1);
-	h_img = (float *)mat.data;
+	cuMallocManaged((void **)&h_img2, rows, cols);
+	cuMallocManaged((void **)&h_img3, rows, cols);
+	
+	//h_img = mat.data;
+	for(int i=0; i<rows*cols; i++){
+		h_img[i] = mat.data[i];
+	}	
 	cout << "1" << endl;
 	cout << h_img[0] << endl;
 	cout << "1" << endl;
 	Mat hmat;
 	for(int i=0; i<rows*cols; i++){
 			//cout << h_img[i] << endl;
-			h_img[i] = 0;
+			//h_img[i] = 0;
 	}
 	cout << "1" << endl;	
-	hmat = Mat(cvSize(rows, cols),  CV_32FC1,  h_img, 0);
+	hmat = Mat(cvSize(cols, rows),  CV_8UC1,  h_img);
+	Mat hmat2 = Mat(cvSize(cols, rows),  CV_8UC1,  h_img2);
+	Mat hmat3 = Mat(cvSize(cols, rows),  CV_8UC1,  h_img3);	
 	cout << "1" << endl;
 	//cout << hmat << endl;
 
@@ -43,12 +51,12 @@ int main(int argc, char** argv){
 
 	//cout << h_img[0] << endl;
 	cout << "1" << endl;	
-	cuda::GpuMat dmat(cvSize(rows, cols), CV_32FC1, h_img, 0);
-	cuda::GpuMat d_dst;
+	gpu::GpuMat dmat(cvSize(cols, rows), CV_8UC1, h_img);
+	gpu::GpuMat dmat2(cvSize(cols, rows), CV_8UC1, h_img2);
+	gpu::GpuMat dmat3(cvSize(cols, rows), CV_8UC1, h_img3);	
 	for(int i=0; i<rows*cols; i++){
-			h_img[i] = 125;
+			//h_img[i] = 125;
 	}
-	cuDeviceSynchronize();
 	double timeSec = 0;
 	int64 startUVM = getTickCount();
 	for(int i=0; i<100; i++){
@@ -57,15 +65,10 @@ int main(int argc, char** argv){
 		//cout << dmat.channels() << endl;	
 		timeSec += (getTickCount() - startUVM) / getTickFrequency();
 	}
-	//cv::cuda::bilateralFilter( dmat, dmat, -1, 50, 7 );
-    Ptr<cuda::CannyEdgeDetector> canny = cuda::createCannyEdgeDetector( 35.0, 200.0 );
-    dmat.convertTo(d_dst, CV_8UC1);
-    canny->detect( d_dst, d_dst );
+	gpu::multiply(dmat, dmat, dmat3);
+
  	
-	cout << "1" << endl;
-	result = Mat(d_dst);
-	cuDeviceSynchronize();
-	cv::imshow("test", result);
+	cv::imshow("test", hmat3);
 	waitKey(0);
 	return 0;
 }

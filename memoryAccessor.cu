@@ -10,7 +10,7 @@ void cuSetDeviceFlags(){
 }
 void cuMallocManaged(void** h_img, int r, int c){
 
-	cudaMallocManaged(h_img,sizeof(float)*r*c);
+	cudaMallocManaged(h_img,sizeof(unsigned char)*r*c);
 
 }
 
