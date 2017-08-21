@@ -8,7 +8,7 @@ using namespace std;
 void cuSetDeviceFlags(){
 	cudaSetDeviceFlags(cudaDeviceMapHost);
 }
-void cuMallocManaged(float** h_img, int r, int c){
+void cuMallocManaged(void** h_img, int r, int c){
 
 	cudaMallocManaged(h_img,sizeof(float)*r*c);
 

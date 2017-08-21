@@ -6,5 +6,5 @@ CXX_FLAGS = -std=c++11 -g -O3 -Wno-unused-result -Wno-deprecated -fPIC -Wno-depr
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/include/opencv -I/usr/local/cuda/include -I/usr/local/cuda-8.0/include 
+CXX_INCLUDES = -isystem /usr/local/include -isystem /usr/local/include/opencv -I/usr/local/cuda/include -I/usr/local/cuda-8.0/include 
 

@@ -2,7 +2,9 @@
 #include <opencv2/core/mat.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
-#include "opencv2/gpu/gpu.hpp"
+#include "opencv2/cudafilters.hpp"
+#include "opencv2/cudaimgproc.hpp"
+#include "opencv2/core/cuda.hpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -11,19 +13,41 @@ using namespace cv;
 using namespace std;
 using namespace std;
 int main(int argc, char** argv){
+	
+
 	cuSetDeviceFlags();
-	float* h_img;
+	float *h_img;
 	int rows = 1280;
 	int cols = 720;
+	Mat mat = cv::imread("../720p.jpg", CV_32FC1);
 
-	cuMallocManaged(&h_img, rows, cols);
-
+	
+	cuMallocManaged((void **)&h_img, rows, cols);
+	mat.convertTo(mat,CV_32FC1);
+	h_img = (float *)mat.data;
+	cout << "1" << endl;
+	cout << h_img[0] << endl;
+	cout << "1" << endl;
 	Mat hmat;
-	hmat = Mat(cvSize(cols, rows), CV_32F,  h_img);
-	Mat result;
-	hmat = cv::imread("../720p.jpg");
+	for(int i=0; i<rows*cols; i++){
+			//cout << h_img[i] << endl;
+			h_img[i] = 0;
+	}
+	cout << "1" << endl;	
+	hmat = Mat(cvSize(rows, cols),  CV_32FC1,  h_img, 0);
+	cout << "1" << endl;
 	//cout << hmat << endl;
-	gpu::GpuMat dmat(cvSize(rows, cols), CV_32F, h_img);
+
+	Mat result;
+	//hmat = cv::imread("../720p.jpg");
+
+	//cout << h_img[0] << endl;
+	cout << "1" << endl;	
+	cuda::GpuMat dmat(cvSize(rows, cols), CV_32FC1, h_img, 0);
+	cuda::GpuMat d_dst;
+	for(int i=0; i<rows*cols; i++){
+			h_img[i] = 125;
+	}
 	cuDeviceSynchronize();
 	double timeSec = 0;
 	int64 startUVM = getTickCount();
@@ -33,49 +57,15 @@ int main(int argc, char** argv){
 		//cout << dmat.channels() << endl;	
 		timeSec += (getTickCount() - startUVM) / getTickFrequency();
 	}
-	dmat.download(hmat);
+	//cv::cuda::bilateralFilter( dmat, dmat, -1, 50, 7 );
+    Ptr<cuda::CannyEdgeDetector> canny = cuda::createCannyEdgeDetector( 35.0, 200.0 );
+    dmat.convertTo(d_dst, CV_8UC1);
+    canny->detect( d_dst, d_dst );
+ 	
+	cout << "1" << endl;
+	result = Mat(d_dst);
 	cuDeviceSynchronize();
-	//cv::imshow("test", hmat);
-	cout << timeSec << endl;
-	
-	float* h_img2 = (float*)malloc(sizeof(float)*rows*cols);
-	float* d_img2;
-	
-	cuMalloc((void **)&d_img2, rows, cols);
-	
-	Mat hmat2(cvSize(rows, cols), CV_32F, h_img2);
-	
-	gpu::GpuMat dmat2(cvSize(rows, cols), CV_32F, d_img2);
-	timeSec = 0;
-	startUVM = getTickCount();
-	for(int i=0; i<100; i++)
-	{
-		dmat2.upload(hmat2);
-		dmat2.download(hmat2);
-		timeSec += (getTickCount() - startUVM) / getTickFrequency();
-	}
-	cout << timeSec << endl;
-	//https://stackoverflow.com/questions/14361322/accessing-image-pixels-as-float-array
-	VideoCapture cap("../NORWAY720P.mp4");
-    if(!cap.isOpened())  // check if we succeeded
-        return -1;
-	float* frameMem;
-	cuMallocManaged(&frameMem, rows, cols);
-	Mat frame2;
-	Mat frame(cvSize(cols, rows), CV_32F,  frameMem);
-	Mat result2;
-	gpu::GpuMat dframe(cvSize(cols, rows), CV_32F, frameMem);
-	for(;;){
-		cap >> frame2;
-		frameMem = (float *)frame2.data;
-		cout << *frameMem << endl;
-		dframe.download(result2);
-		cuDeviceSynchronize(); 
-		cv::imshow("test", result2);
-		 
-		waitKey(1); 
-	}
-
-	//cout << dmat << endl;
+	cv::imshow("test", result);
+	waitKey(0);
 	return 0;
 }
