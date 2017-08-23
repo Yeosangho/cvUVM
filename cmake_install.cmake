@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/dev/cvUVM
+# Install script for directory: /home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ubuntu/dev/cvUVM/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/dev_opencv3/tx1CVMemoryTest/normal/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
